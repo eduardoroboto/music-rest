@@ -1,0 +1,38 @@
+#+TITLE: Music REST
+#+AUTHOR: Eduardo B.N
+
+* Manual
+
+O app tem os seguintes tecnologias que precisam ser instaladas.
+
++ Flask
++ Flask-Restx
++ flask Marshmallow
+
+** Pipenv
+
+Para instalar todas essas tecnologias sem dificuldades, há um arquivo chamado pipfile, ele é o arquivo que declara todos os pacotes.
+
+Pipenv é um gerenciador e ambientes virtuais python.
+
+Instale ele atráves do seu gerenciador de pacotes ou atraves do pip install
+
+#+begin_src bash
+pip install pipenv
+#+end_src
+
+
+Apos instalar abre o terminal nesta pasta onde se encotra esse readme e execute.
+
+#+begin_src bash
+pipenv install --dev
+#+end_src
+
+** Como rodar esse projeto
+
+Exporte esses comandos de dentro do ambiente virtual e execute python3.
+
+#+begin_src bash
+python3 main.py
+#+end_src
+
