@@ -11,7 +11,7 @@ playlist_model = playlist_ns.model('PlayList', {
     'id': fields.Integer(required=False, description='Playlist id'),
     'name': fields.String(required=True, description='Playlist name'),
     'user_id': fields.Integer(required=True, description='Playlist User Id'),
-    'musics_list': fields.List(fields.Integer(), description='List of ids of musics')
+    'musics_list': fields.List(fields.Integer, description='List of ids of musics')
 })
 
 playlist_schema = PlayListSchema()
@@ -29,6 +29,7 @@ class PlayListsApi(Resource):
     @playlist_ns.expect(playlist_model)
     def post(self):
         try:
+            print(playlist_ns.payload)
             new_playlist = playlist_schema.load(playlist_ns.payload)
             db.add_new_playlists(new_playlist)
             return playlist_ns.payload, 200
@@ -67,7 +68,7 @@ class PlayListApi(Resource):
         if playlist_id in db.playlists.keys():
             try:
                 new_playlist = playlist_schema.load(playlist_ns.payload)
-                db.update_playlist(new_playlist)
+                db.update_playlist(new_playlist, playlist_id)
                 return new_playlist, 200
             except TypeError as err:
                 return err.__str__(), 400

@@ -13,7 +13,7 @@ class PlayListSchema(Schema):
     id = fields.Int()
     name = fields.Str()
     user_id = fields.Int()
-    musics = fields.List(fields.Int())
+    musics_list = fields.List(fields.Int())
 
 
 class UserSchema(Schema):
