@@ -25,7 +25,7 @@ pip install pipenv
 Apos instalar abre o terminal nesta pasta onde se encotra esse readme e execute.
 
 #+begin_src bash
-pipenv install --dev
+pipenv install
 #+end_src
 
 ** Como rodar esse projeto
